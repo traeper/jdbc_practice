@@ -10,7 +10,7 @@ public class SelectExample {
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String url = "jdbc:mysql://localhost:3306/shopping_mall?useUnicode=true&characterEncoding=UTF-8";
     private static final String user = "root";
-    private static final String password = "";
+    private static final String password = "1234";
 
     private static Statement stmt;
     private static Connection conn;
@@ -38,6 +38,8 @@ public class SelectExample {
 
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt("id") + "\t" + resultSet.getString("name"));
+
+                // TODO swing 라이브러리 연동
             }
 
         } catch (Exception e) {

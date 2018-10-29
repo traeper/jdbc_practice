@@ -13,7 +13,7 @@ public class UpdateExample {
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String url = "jdbc:mysql://localhost:3306/shopping_mall?useUnicode=true&characterEncoding=UTF-8";
     private static final String user = "root";
-    private static final String password = "";
+    private static final String password = "1234";
 
     private static PreparedStatement pstmt;
     private static Connection conn;
@@ -28,11 +28,17 @@ public class UpdateExample {
             System.out.println("connection successful");
 
             // sql 쿼리
-            String sql = "UPDATE user SET name = ? WHERE id = 5;";
+            String sql = "UPDATE user SET name = ? WHERE id = 3;";
 
             // prepareStatement에서 해당 sql을 미리 컴파일한다.
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "이나영");
+
+            // 상황판 예제
+//            String sql = "UPDATE board SET patient_count = ? WHERE id = ?;";
+//            pstmt = conn.prepareStatement(sql);
+//            pstmt.setString(1, 환자수);
+//            pstmt.setString(2, 프로젝트ID);
 
             // 쿼리를 실행한다.
             pstmt.executeUpdate();

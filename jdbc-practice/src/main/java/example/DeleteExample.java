@@ -13,7 +13,7 @@ public class DeleteExample {
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String url = "jdbc:mysql://localhost:3306/shopping_mall?useUnicode=true&characterEncoding=UTF-8";
     private static final String user = "root";
-    private static final String password = "";
+    private static final String password = "1234";
 
     private static PreparedStatement pstmt;
     private static Connection conn;

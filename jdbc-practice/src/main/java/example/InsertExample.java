@@ -13,7 +13,7 @@ public class InsertExample {
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String url = "jdbc:mysql://localhost:3306/shopping_mall?useUnicode=true&characterEncoding=UTF-8";
     private static final String user = "root";
-    private static final String password = "";
+    private static final String password = "1234";
 
     private static PreparedStatement pstmt;
     private static Connection conn;
@@ -27,19 +27,33 @@ public class InsertExample {
             Connection conn = DriverManager.getConnection(url, user, password);
             System.out.println("connection successful");
 
+            // TODO 다이얼로그 띄우기.
+
+            // TODO Import 할 엑셀 파일 선택
+
+            // TODO 엑셀 파일에서 데이터 불러오기(N건)
+
+            // TODO N건의 데이터에 대해 반복문으로 INSERT 쿼리 실행하기
+
+            // TODO exam_date가 null인 경우
+//            if(patient.getExamDate() == null) {
+//
+//            }
+
             // sql 쿼리
             String sql = "insert into user (name) values(?)";
 
             // prepareStatement에서 해당 sql을 미리 컴파일한다.
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "손나은");
+//            pstmt.setInt(2, 20181029);
 
             // 쿼리를 실행한다.
             pstmt.executeUpdate();
 
             // 성공시 메시지 출력
             System.out.println("user 테이블에 새로운 레코드를 추가했습니다.");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             // 예외가 발생하면 예외 상황을 처리한다.
             e.printStackTrace();
 
